@@ -6,7 +6,7 @@
 [image2]: ./examples/distr_validation_set.png "Distribution validation set"
 [image3]: ./examples/distr_test_set.png "Distribution test set"
 [image4]: ./examples/overview_data.png "Overview dataset"
-[image5]: ./examples/random_noise.png "Random Noise"
+[image5]: ./examples/augmenting.png "Overview augmenting"
 [image6]: ./examples/30kmh.png "30 km/h"
 [image7]: ./examples/stop.png "Stop"
 [image8]: ./examples/70kmh.png "70 km/h"
@@ -138,40 +138,37 @@ Other hyperparameter that have used and not changed because of good results are:
 
 During training, I have mostly used 10 EPOCs to compare the results. When the model was stable, I have tried the optimal number between 50 and 100. After 50 EPOCs the results did almost not improve anymore.
 
-#### Approach
+#### Results
 
 My final model results were:
 * training set accuracy of 0.996
 * validation set accuracy of 0.996
 * test set accuracy of 0.951
 
-If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
-* What were some problems with the initial architecture?
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-* Which parameters were tuned? How were they adjusted and why?
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
-
-If a well known architecture was chosen:
-* What architecture was chosen?
-* Why did you believe it would be relevant to the traffic sign application?
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
- 
-
 ### Test a Model on New Images
 
 The first traffic signs that I have found, were classified correctly. So I search till I have found a mismatch.
 
 ![alt text][image6]
+
 ![alt text][image7]
+
 ![alt text][image8]
+
 ![alt text][image9]
+
 ![alt text][image10]
+
 ![alt text][image11]
+
 ![alt text][image12]
+
 ![alt text][image13]
+
 ![alt text][image14]
+
 ![alt text][image15]
+
 ![alt text][image16]
 
 
@@ -191,6 +188,7 @@ Here are the results of the prediction:
 |  |  |
 | Yield | Yield |
 | Priority road | Priority road |
+| Speed limit (100km/h) | Speed limit (30km/h) | 
 |  |  |
 |  |  |
 

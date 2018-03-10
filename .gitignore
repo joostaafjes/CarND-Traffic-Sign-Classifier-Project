@@ -4,4 +4,6 @@ data
 models
 *.swp
 *.p
+.idea
 .idea/
+.idea/*xml

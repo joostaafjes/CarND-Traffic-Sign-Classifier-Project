@@ -180,33 +180,36 @@ Here are the results of the prediction:
 |:---------------------:|:---------------------------------------------:| 
 | Speed limit (30km/h) | Speed limit (30km/h) | 
 | Stop | Stop |
-| Speed limit (70km/h) | Speed limit (70km/h) | 
+| Speed limit (70km/h) | Speed limit (30km/h) | 
 | No entry | No entry |
 | Ahead only | Ahead only |
 | Turn right ahead | Turn right ahead |
 | Road work | Road work |
-|  |  |
+| Vehicles over 3.5 metric tons prohibited | Vehicles over 3.5 metric tons prohibited |
 | Yield | Yield |
 | Priority road | Priority road |
-| Speed limit (100km/h) | Speed limit (30km/h) | 
-|  |  |
-|  |  |
+| Speed limit (100km/h) | Speed limit (60km/h) | 
 
 
-The model was able to correctly guess 10 of the 11 traffic signs, which gives an accuracy of 91%.
+The model was able to correctly guess 9 of the 11 traffic signs, which gives an accuracy of 82%.
 
 #### Probabilities
 
-The code for making predictions on my final model is located in the xxth cell of the Ipython notebook.
+The code for making predictions on my final model is located in the 36th cell of the Ipython notebook.
 
-For the first 10 images, the model is 100% sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
+The 2 predications that were wrong, were both speed limit signs with numbers in it. The sample images taken from the internet both had a rotation in it, that probably did not occur in the test images. Solution could be to train them again with more augmentation with rotation.
 
-For the last(11th) image, the model is completly wrong. The top five soft max probabilities were
+For all soft max probabilities (both the right and wrong ones), the result looks like this:
+- Stop with prob 1.000
+- Speed limit (20km/h) with prob 0.000
+- Speed limit (30km/h) with prob 0.000
+- Speed limit (50km/h) with prob 0.000
+- Speed limit (60km/h) with prob 0.000
 
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| .60         			| | 
-| .20     				| |
-| .05					| |
-| .04	      			| |
-| .01				    | |
+So the model is not very nuanced. A possible cause could be overtraining of the network or not a perfect architecture.
+
+Possible steps to improve this, could be:
+- Adapt architecture
+- Try another architecture like AlexNet, VGG, GoogLeNet or ResNet.
+
+This has not been further investigated.
